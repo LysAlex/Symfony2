@@ -1,0 +1,42 @@
+{% extends "layout.html.twig" %}
+{% block container %}
+    <center>
+        <ul>
+        <li><a href="{{path('tags')}}">Par défault</a></li>
+        <li><a href="{{path('order_tag_alph_desc')}}">Z-A</a></li>
+        </ul>
+    <table id ="tableLinkTag"> 
+        
+        <tr>
+        <th> Nom du Tag </th>
+        </tr>
+       
+</tr>
+{% for news_tag in tags %}
+
+    <tr>
+
+        <td>  {{news_tag.nom}}                 </td>
+
+        {% if is_granted('ROLE_SUPER_ADMIN') %}
+
+
+            <td> <h4> <a href="{{ path('update',{'id': news_tag.id}) }}" onclick="return(confirm('Voulez vous modifier ?'));"> <span class="glyphicon glyphicon-upload"></span> </a> </h4>  </td>
+
+            <td> <h4><a href="{{ path('delete',{'id': news_tag.id}) }}" onclick="return(confirm('Etes-vous sûr de vouloir supprimer cette entrée ?'));" > <span class="glyphicon glyphicon-erase"></span> </a>  </h4> </td>
+        {% endif %}
+
+
+    </tr>
+
+{% endfor %}
+
+</table>
+    </center>
+
+
+{% endblock %}
+
+
+
+
