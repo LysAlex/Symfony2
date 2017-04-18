@@ -1,0 +1,36 @@
+body {
+    padding-top: 50px;
+}
+
+.starter-template{
+    padding: 40px 15px;
+    text-align: center;
+}
+
+#tableLinkTag {
+    border-collapse: collapse;
+    border: 2px solid black;
+    text-align: center;
+    cellpadding :"15";
+
+}
+
+
+
+td {
+    border-collapse: collapse;
+    border: 2px solid black;
+}
+
+#nomLink{
+    color: black;
+}
+
+#dateLink{
+    color: black;
+}
+
+#link{
+    font-size: 15px;
+}
+
